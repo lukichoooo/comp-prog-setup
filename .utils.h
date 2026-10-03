@@ -81,9 +81,9 @@ using ll = long long;
 #define iterate(x) for (ll __i{}; __i < x; ++__i)
 
 template <class... Args>
-void print(const Args &...args) { (std::cout << ... << args); }
+void output(const Args &...args) { (std::cout << ... << args); }
 template <class... Args>
-void read(Args &...args) { (std::cin >> ... >> args); }
+void input(Args &...args) { (std::cin >> ... >> args); }
 
 
 template <typename K, typename V>
@@ -145,65 +145,3 @@ inline std::vector<std::pair<ll, ll>> getPrimeFactors(ll a, const std::vector<ll
         factors.push_back({a, 1});
     return factors;
 };
-using namespace std;
-constexpr ll INF = INT_MAX - 10;
-constexpr ll mod = 676767677;
-
-
-_MAIN_START
-
-
-ll tt = 1;
-read(tt);
-while (tt--)
-{
-    ll n;
-    read(n);
-
-    ll nodeFurthestFromOne = 1;
-    ll maxDistanceFromOne = 0;
-    for (ll v = 2; v <= n; ++v)
-    {
-        ll isMore = 1;
-        while (isMore)
-        {
-            print("? 1 ", v, " ", maxDistanceFromOne + 1, endl);
-            cout.flush();
-
-            read(isMore);
-            if (isMore)
-            {
-                maxDistanceFromOne++;
-                nodeFurthestFromOne = v;
-            }
-        }
-    }
-
-    ll furthestNodeFromFurthestNode = 1;
-    ll maxDistance = maxDistanceFromOne;
-    for (ll v = 2; v <= n; ++v)
-    {
-        if (v == nodeFurthestFromOne)
-            continue;
-        ll isMore = 1;
-        while (isMore)
-        {
-            print("? ", nodeFurthestFromOne, " ", v, " ", maxDistance + 1, endl);
-            cout.flush();
-
-            read(isMore);
-            if (isMore)
-            {
-                maxDistance++;
-                furthestNodeFromFurthestNode = v;
-            }
-        }
-    }
-
-    print("! ", nodeFurthestFromOne, " ", furthestNodeFromFurthestNode, " ", maxDistance);
-    print(endl);
-    cout.flush();
-}
-
-
-_MAIN_END
