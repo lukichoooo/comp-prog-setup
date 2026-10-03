@@ -8,11 +8,11 @@ _MAIN_START
 
 
 ll tt = 1;
-read(tt);
+input(tt);
 while (tt--)
 {
     ll n;
-    read(n);
+    input(n);
 
     ll nodeFurthestFromOne = 1;
     ll maxDistanceFromOne = 0;
@@ -21,10 +21,10 @@ while (tt--)
         ll isMore = 1;
         while (isMore)
         {
-            print("? 1 ", v, " ", maxDistanceFromOne + 1, endl);
+            output("? 1 ", v, " ", maxDistanceFromOne + 1, endl);
             cout.flush();
 
-            read(isMore);
+            input(isMore);
             if (isMore)
             {
                 maxDistanceFromOne++;
@@ -42,10 +42,10 @@ while (tt--)
         ll isMore = 1;
         while (isMore)
         {
-            print("? ", nodeFurthestFromOne, " ", v, " ", maxDistance + 1, endl);
+            output("? ", nodeFurthestFromOne, " ", v, " ", maxDistance + 1, endl);
             cout.flush();
 
-            read(isMore);
+            input(isMore);
             if (isMore)
             {
                 maxDistance++;
@@ -54,8 +54,8 @@ while (tt--)
         }
     }
 
-    print("! ", nodeFurthestFromOne, " ", furthestNodeFromFurthestNode, " ", maxDistance);
-    print(endl);
+    output("! ", nodeFurthestFromOne, " ", furthestNodeFromFurthestNode, " ", maxDistance);
+    output(endl);
     cout.flush();
 }
 

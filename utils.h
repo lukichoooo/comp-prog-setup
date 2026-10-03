@@ -81,9 +81,9 @@ using ll = long long;
 #define iterate(x) for (ll __i{}; __i < x; ++__i)
 
 template <class... Args>
-void print(const Args &...args) { (std::cout << ... << args); }
+void output(const Args &...args) { (std::cout << ... << args); }
 template <class... Args>
-void read(Args &...args) { (std::cin >> ... >> args); }
+void input(Args &...args) { (std::cin >> ... >> args); }
 
 
 template <typename K, typename V>
